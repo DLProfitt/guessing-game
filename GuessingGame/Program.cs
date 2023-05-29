@@ -29,7 +29,7 @@ class Program
                 {
                     if (i < 3)
                     {
-                        Console.WriteLine("Uh... No! Try again.");
+                        Console.WriteLine(guess < secret ? "Uh... too low." : "Nope... too high");
                     }
                 }
             }
