@@ -4,13 +4,16 @@ class Program
 {
     static void Main()
     {
-        int secret = 42;
-        Console.WriteLine("You will have 4 attempts to guess my secret number.");
-
+        Random num = new Random();
+        int secret = num.Next(1, 100);
+        int guessMax = 4;
+        Console.WriteLine("Bet you can't guess my secret number!");
         for (int i = 0; i < 4; i++)
         {
-            int guessNumber = i + 1;
-            Console.WriteLine($"Guess {guessNumber} of 4. What number am I thinking of? ");
+            int guessesRemaining = guessMax--;
+            Console.WriteLine();
+            Console.WriteLine($"You have {guessesRemaining} guesses.");
+            Console.WriteLine("What number am I thinking of?");
             string guessString = Console.ReadLine();
 
             bool parseSuccess = Int32.TryParse(guessString, out int guess);
