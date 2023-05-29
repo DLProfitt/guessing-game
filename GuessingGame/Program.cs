@@ -9,7 +9,8 @@ class Program
 
         for (int i = 0; i < 4; i++)
         {
-            Console.WriteLine("What number am I thinking of? ");
+            int guessNumber = i + 1;
+            Console.WriteLine($"Guess {guessNumber} of 4. What number am I thinking of? ");
             string guessString = Console.ReadLine();
 
             bool parseSuccess = Int32.TryParse(guessString, out int guess);
